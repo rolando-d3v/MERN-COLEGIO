@@ -8,6 +8,7 @@ import config from "./config";
 import './config'
 //db
 import './db'
+import VideoRoutes from "./api/video/video.routes";
 
 
 const app = express();
@@ -19,4 +20,8 @@ app.listen(port, () => {
 //middlewares
 app.use(cors());
 app.use(morgan("dev"));
+app.use(express.json());
 app.use(express.urlencoded({extended: false}))
+
+//routes
+app.use('/videos', VideoRoutes )

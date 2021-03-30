@@ -4,20 +4,23 @@ import config from "./config";
 (async () => {
   try {
     const db = await mongoose.connect(
-      `mongodb+srv://${config.db.user}:${config.db.pass}@cafe.8wspk.mongodb.net/${config.db.name}`,
+      // `mongodb+srv://${config.db.user}:${config.db.pass}@cafe.8wspk.mongodb.net/${config.db.name}`,
+      // `mongodb+srv://@cafe.8wspk.mongodb.net/${config.db.name}`,
+      `mongodb://localhost/${config.db.name}`,
       {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useNewUrlParser: true,
         useFindAndModify: false,
-        // auth: {
-        //   user: "",
-        //   password: "",
-        // },
+
+        //forma 2
+        // dbName: config.db.name,
+        // user: config.db.user,
+        // pass: config.db.pass
       }
     );
 
-    console.log(`server db ${db.connection.name} conected `);
+    console.log(`🔥  🚀  DB ${db.connection.name} ➡️ connected  😃  ✔️`);
   } catch (err) {
     console.log({ msn: "Error db", err });
   }
