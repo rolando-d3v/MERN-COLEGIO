@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Registro() {
+export default function Page404() {
     return (
         <div>
-            <h3>Registro</h3>
+            <h3> page not found 404</h3>
         </div>
     )
 }
