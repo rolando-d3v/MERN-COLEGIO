@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { clienteAxios } from "../../config/clienteAxios";
 import { VideoType } from "../../types";
@@ -12,6 +13,7 @@ export default function Formulario() {
   });
 
   const { title, description } = dataForm;
+  const history = useHistory()
 
   type inputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -26,6 +28,7 @@ export default function Formulario() {
       return toast.error("Campo requerido ❗❗ ");
     } else {
       await clienteAxios.post("/videos", dataForm);
+      history.push("/");
       return toast.success("Nuevo video agregado 😃  ✔️ ");
     }
   };
