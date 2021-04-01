@@ -1,4 +1,3 @@
-import React from 'react'
 import Formulario from '../../components/form/Formulario'
 import './registro.scss'
 

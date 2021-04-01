@@ -17,7 +17,7 @@
 }
 
 
-
+//clase para girar un componentes
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -25,4 +25,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/** Classes para edit toast **/
+.Toastify__toast {
+}
+.Toastify__toast--rtl {
+}
+.Toastify__toast--dark {
+}
+.Toastify__toast--default {
+}
+.Toastify__toast--info {
+}
+.Toastify__toast--success {
+  // border: 2px solid #000;
+}
+.Toastify__toast--warning {
+}
+.Toastify__toast--error {
+}
+.Toastify__toast-body {
 }

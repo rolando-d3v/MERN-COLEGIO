@@ -1,4 +1,5 @@
 import React from "react";
+import {ToastContainer} from 'react-toastify'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Video from "./pages/home/Videos";
 import Registro from "./pages/registro/Registro";
@@ -15,6 +16,7 @@ export default function App() {
           <Route exact path="/registro" component={Registro} />
           <Route  path="*" component={Page404} />
         </Switch>
+        <ToastContainer/>
       </BrowserRouter>
     </div>
   );
