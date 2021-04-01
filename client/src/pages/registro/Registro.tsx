@@ -1,9 +1,11 @@
 import React from 'react'
+import Formulario from '../../components/form/Formulario'
+import './registro.scss'
 
 export default function Registro() {
     return (
-        <div>
-            <h3>Registro</h3>
+        <div className='div_registro'  >
+            <Formulario/>
         </div>
     )
 }

@@ -1,0 +1,42 @@
+.div_nav {
+  background-color: beige;
+  width: 100%;
+}
+
+.navbar {
+  padding: 0 25px;
+  display: flex;
+  height: 64px;
+  align-items: center;
+
+  .logo_content {
+    display: flex;
+    align-items: center;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+    .text_logo {
+      margin-left: 5px;
+      font-weight: 900;
+      font-size: 18px;
+      text-shadow: 1px 1px 3px  rgba(0,0,0,0.5);
+    }
+  }
+
+  .nav_1 {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    .nav_link {
+      margin-left: 15px;
+      outline: none;
+      color: gray;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+          color: blueviolet;
+      }
+    }
+  }
+}

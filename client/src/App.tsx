@@ -3,11 +3,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Video from "./pages/home/Videos";
 import Registro from "./pages/registro/Registro";
 import Page404 from "./pages/404/Page.404";
+import Navbar from "./layout/layoutBase/navbar/Navbar";
 
 export default function App() {
   return (
     <div className="">
       <BrowserRouter>
+      <Navbar/>
         <Switch>
           <Route exact path="/" component={Video} />
           <Route exact path="/registro" component={Registro} />
