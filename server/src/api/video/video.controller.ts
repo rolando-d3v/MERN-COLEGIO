@@ -18,7 +18,7 @@ export const createVideo: RequestHandler = async (req, res) => {
 //********************************/
 export const getVideos: RequestHandler = async (req, res) => {
   try {
-    const video = await videoModel.find();
+    const video = await videoModel.find().sort({createdAt: -1})
     res.json(video);
   } catch (err) {
     return res.json({ msn: "Error", err });

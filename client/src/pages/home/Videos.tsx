@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { clienteAxios } from "../../config/clienteAxios";
-import {VideoType} from '../../types'
-import * as FaIcons from 'react-icons/fa'
-
-
+import { VideoType } from "../../types";
+import Video from "../../components/video/Video.item";
+import './videos.scss'
 
 export default function Videos() {
   const [videoData, setVideoData] = useState<VideoType[]>([]);
@@ -17,15 +16,9 @@ export default function Videos() {
   }, []);
 
   return (
-    <div>
+    <div className='content_videos'  >
       {videoData.map((video) => {
-        return (
-          <div key={video._id}>
-            <h3>{video.title} </h3>
-            <FaIcons.FaAdobe/>
-            <h3>{video.description} </h3>
-          </div>
-        );
+        return <Video key={video._id} video={video} />;
       })}
     </div>
   );
