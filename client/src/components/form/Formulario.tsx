@@ -1,19 +1,23 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { clienteAxios } from "../../config/clienteAxios";
+import * as api from "../../config/videoApi";
 import { VideoType } from "../../types";
 import "./formulario.scss";
 
-export default function Formulario() {
+interface Props {
+  id: string;
+}
+
+export default function Formulario({ id }: Props) {
   const [dataForm, setDataForm] = useState<VideoType>({
     title: "",
     description: "",
     url: "",
   });
 
-  const { title, description } = dataForm;
-  const history = useHistory()
+  const { title, description, url } = dataForm;
+  const history = useHistory();
 
   type inputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -24,14 +28,35 @@ export default function Formulario() {
   const enviarRegistro = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!title || !description) {
-      return toast.error("Campo requerido ❗❗ ");
+    if (!title || !description) return toast.error("Campo requerido ❗❗ ");
+
+    if (!id) {
+      await api.createNewVideo(dataForm);
+      toast.success("Nuevo video agregado 😃  ✔️ ");
     } else {
-      await clienteAxios.post("/videos", dataForm);
-      history.push("/");
-      return toast.success("Nuevo video agregado 😃  ✔️ ");
+      await api.updateVideo(id, dataForm);
+      toast.success("Video actualizado 😃  ✔️ ");
     }
+    setDataForm({
+      title: "",
+      description: "",
+      url: "",
+    });
+    history.push("/");
   };
+
+  useEffect(() => {
+    (async () => {
+      if (id) {
+        const video = await api.getVideoById(id)
+        setDataForm({
+          title: video.data.title,
+          description: video.data.description,
+          url: video.data.url,
+        });
+      }
+    })();
+  }, []);
 
   return (
     <div className="div_form">
@@ -43,6 +68,7 @@ export default function Formulario() {
             type="text"
             autoComplete="off"
             name="title"
+            value={title}
             placeholder="ingrese titulo"
             className="form_input"
             onChange={dataInput}
@@ -54,6 +80,7 @@ export default function Formulario() {
             type="text"
             autoComplete="off"
             name="url"
+            value={url}
             placeholder="ingrese url"
             className="form_input"
             onChange={dataInput}
@@ -64,14 +91,21 @@ export default function Formulario() {
           <textarea
             name="description"
             placeholder="ingrese una description"
+            value={description}
             className="form_input_text_area"
             onChange={dataInput}
           />
         </section>
 
-        <button className="btn_form" type="submit">
-          Crear{" "}
-        </button>
+        {id ? (
+          <button className="btn_form" type="submit">
+            Actualizar
+          </button>
+        ) : (
+          <button className="btn_form" type="submit">
+            Crear
+          </button>
+        )}
       </form>
     </div>
   );

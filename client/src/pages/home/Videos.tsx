@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { clienteAxios } from "../../config/clienteAxios";
+import * as api from "../../config/videoApi";
 import { VideoType } from "../../types";
 import Video from "../../components/video/Video.item";
 import './videos.scss'
@@ -9,7 +9,7 @@ export default function Videos() {
 
   useEffect(() => {
     (async () => {
-      const result = await clienteAxios.get(`/videos`);
+      const result = await api.getVideos()
       console.log(result.data);
       setVideoData(result.data);
     })();
