@@ -17,6 +17,9 @@ export default function Navbar() {
           <Link className="nav_link" to="/registro">
             Registro
           </Link>
+          <Link className="nav_link" to="/discord">
+            Discors
+          </Link>
         </div>
       </nav>
     </div>
