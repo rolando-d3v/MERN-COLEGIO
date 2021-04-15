@@ -11,11 +11,11 @@ export default function App() {
   return (
     <div className="">
       <BrowserRouter>
-      <Navbar/>
+      {/* <Navbar/> */}
         <Switch>
+          <Route exact path="/discord" component={Discord} />
           <Route exact path="/" component={Video} />
           <Route exact path="/registro" component={Registro} />
-          <Route exact path="/discord" component={Discord} />
           <Route  path="/video/:id" component={Registro} />
           <Route  path="*" component={Page404} />
         </Switch>

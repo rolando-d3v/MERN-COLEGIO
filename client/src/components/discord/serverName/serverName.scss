@@ -1,0 +1,21 @@
+.content-name{
+    grid-area: SN;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0,0.2);
+    z-index: 2;
+
+    &__title{
+        color: var(--white);
+    }
+
+    &__icon {
+        color: var(--white);
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+    }
+}

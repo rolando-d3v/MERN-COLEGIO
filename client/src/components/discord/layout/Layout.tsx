@@ -1,10 +1,17 @@
-import React from 'react'
-import './layout.scss'
+import React from "react";
+import ChannelInfo from "../channelInfo/ChannelInfo";
+import ServerList from "../serverList/ServerList";
+import ServerName from "../serverName/ServerName";
+import "./layout.scss";
 
-export default function Layout() {
-    return (
-        <div>
-            <h3>fol</h3>
-        </div>
-    )
-}
+const Layout: React.FC = () => {
+  return (
+    <div className="layout-discord">
+      <ServerList />
+      <ServerName />
+      <ChannelInfo/>
+    </div>
+  );
+};
+
+export default Layout;

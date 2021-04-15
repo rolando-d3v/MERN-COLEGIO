@@ -1,0 +1,31 @@
+.channel-info{
+    grid-area: CI;
+    background-color: var(--primary);
+    display: flex;
+    padding: 0px 1rem;
+    align-items: center;
+
+    &__icon{
+        color: var(--white);
+        font-size: 22px;
+        margin-right: 5px;
+    }
+
+    &__text{
+        color: var(--white);
+    }
+
+    &__palo{
+        height: 24px;
+        width: 1px;
+        opacity: 0.2;
+        margin: 0 13px ;
+        display: block;
+        background-color: var(--white);
+    }
+
+    &__text-secon{
+        color: var(--white);
+        font-size: 15px;
+    }
+}
