@@ -1,0 +1,83 @@
+// mixin para extender hover en iconos
+@mixin hover-icon {
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.channel-list {
+  grid-area: CL;
+  color: var(--gray);
+  padding: 24px 9.5px 0px 16px;
+  background-color: var(--secondary);
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  &__text {
+    font-size: 13px;
+  }
+
+  &__icon-add {
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+  }
+
+  // *************************************
+  // lista de canales
+  &__btn-list {
+    height: 30px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--quinary);
+
+      > div span {
+        color: var(--white);
+      }
+    }
+
+    .btn-list__name {
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 5px;
+        color: var(--senary);
+      }
+    }
+
+    .btn-list__icon {
+      display: flex;
+      align-items: center;
+      .icon_user {
+        color: var(--symbol);
+        cursor: pointer;
+        transition: color 0.2s;
+        width: 14px;
+        height: 14px;
+        @include hover-icon;
+      }
+      .icon_setting {
+        color: var(--symbol);
+        transition: color 0.2s;
+        cursor: pointer;
+        margin-left: 4px;
+        width: 14px;
+        height: 14px;
+        @include hover-icon;
+      }
+    }
+  }
+}

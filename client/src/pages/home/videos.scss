@@ -1,5 +1,13 @@
 .content_videos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    gap: 30px;
+    padding: 40px;
     justify-content: center;
 }
+
+@media (max-width: 560px) {
+    .content_videos {
+      grid-template-columns: 100%;
+    }
+  }
