@@ -7,10 +7,13 @@ const UserInfo: React.FC = () => {
     <section className="user-info">
       <div className="user-info-profile">
         <img src="assets/avatar.jpg" alt="avatar"/>
+        <article className="user-info-profile__text-name" >
+            <strong>Rolando D3v</strong>
+            <span>#25252</span>
+        </article>
       </div>
       <div className="user-info-icons">
         <FaIcons.FaMicrophone/>
-        <FaIcons.FaHeadphones/>
         <FaIcons.FaHeadphonesAlt/>
         <FaIcons.FaCog/>
       </div>
