@@ -6,7 +6,7 @@ import config from "./config";
     const db = await mongoose.connect(
       // `mongodb+srv://${config.db.user}:${config.db.pass}@cafe.8wspk.mongodb.net/${config.db.name}`,
       // `mongodb+srv://@cafe.8wspk.mongodb.net/${config.db.name}`,
-      `mongodb://localhost/${config.db.name}`,
+      `mongodb://localhost/${config.db_name}`,
       {
         useCreateIndex: true,
         useUnifiedTopology: true,

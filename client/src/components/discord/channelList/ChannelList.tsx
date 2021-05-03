@@ -19,8 +19,8 @@ const ChannelList: React.FC = () => {
         <span className="channel-list__text">CANAIS DE TEXTO</span>
         <RiIcons.RiAddLine className="channel-list__icon-add" />
       </div>
-      {listChannel.map((lis) => (
-        <section className="channel-list__btn-list">
+      {listChannel.map((lis, index) => (
+        <section key={index}  className="channel-list__btn-list">
           <div className="btn-list__name" >
             <FaIcons.FaHashtag />
             <span> {lis.name}</span>

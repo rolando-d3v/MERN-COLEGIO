@@ -5,7 +5,7 @@ import * as FaIcons from 'react-icons/fa'
 const ServerName: React.FC = () => {
     return (
         <div className='content-name'  >
-            <h3 className='content-name__title'  >Servidor Rol</h3>
+            <h3 className='content-name__title'  >Servidor Rolando</h3>
             <FaIcons.FaAngleDown className='content-name__icon'  />
         </div>
     )

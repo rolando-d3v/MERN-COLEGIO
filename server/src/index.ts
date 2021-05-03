@@ -1,13 +1,15 @@
 import express from "express";
 import cors from "cors";
 import morgan from 'morgan'
-import config from "./config";
+import config from "./config/config";
 
 
 //config
-import './config'
+import './config/config'
+
+
 //db
-import './db'
+import './config/db'
 import VideoRoutes from "./api/video/video.routes";
 
 

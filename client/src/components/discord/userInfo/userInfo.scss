@@ -1,4 +1,36 @@
 .user-info {
     grid-area: UI;
-    background-color:var(--secondary);
+    background-color:var(--quaternary);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.2);
+}
+
+
+.user-info-profile {
+    display: flex;
+    align-items: center;
+
+    > img {
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 50%;
+    }
+
+}
+
+
+.user-info-icons{
+
+    > svg {
+        color: var(--gray);
+        :hover {
+            color: var(--white);
+        }
+    }
+
 }
