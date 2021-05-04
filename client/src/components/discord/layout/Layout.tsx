@@ -4,6 +4,7 @@ import ChannelList from "../channelList/ChannelList";
 import ServerList from "../serverList/ServerList";
 import ServerName from "../serverName/ServerName";
 import UserInfo from "../userInfo/UserInfo";
+import UserList from "../userList/UserList";
 import "./layout.scss";
 
 const Layout: React.FC = () => {
@@ -14,6 +15,7 @@ const Layout: React.FC = () => {
       <ChannelInfo/>
       <ChannelList/>
       <UserInfo/>
+      <UserList/>
     </div>
   );
 };
