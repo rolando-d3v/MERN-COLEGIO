@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import * as HiIcons from "react-icons/hi";
+import ChannelMessage from "../channelMessage/ChannelMessage";
 import "./channelData.scss";
 
 const ChannelData: React.FC = () => {
@@ -8,31 +9,11 @@ const ChannelData: React.FC = () => {
   return (
     <section className="container-data">
       <article className="container-data__messages">
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
-        <span>message rolando </span>
+        <ChannelMessage
+        author="Guilherme Rodz"
+        date="21/06/2020"
+        />
+       
       </article>
 
       <article className="container-data__content">
