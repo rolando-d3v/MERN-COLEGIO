@@ -5,7 +5,7 @@ import "./channelMessage.scss";
 export interface Props {
   author: string;
   date: string;
-  content?: string | React.ReactElement | React.ReactNode;
+  content: string | React.ReactElement | React.ReactNode;
   hasMention?: boolean;
   isBot?: boolean;
 }
@@ -18,15 +18,19 @@ const ChannelMessage: React.FC<Props> = ({
   isBot,
 }) => {
   return (
-    <div className="message">
-      <img className="message__avatar" src="" alt="" />
+    <div className={`message ${hasMention ? 'mention' : ''} `} >
+      <img
+        className={`message__avatar ${isBot ? "bot" : ""} `}
+        src="assets/avatar.jpg"
+        alt="avatar"
+      />
       <div className="message__content">
-        <div>
+        <div className="message__content--header">
           <strong> {author} </strong>
           {isBot ? <span>Bot</span> : ""}
           <time>{date} </time>
         </div>
-        <p>{content} </p>
+        <p className="message__content--text-message">{content} </p>
       </div>
     </div>
   );

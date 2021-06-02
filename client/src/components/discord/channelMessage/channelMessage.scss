@@ -1,0 +1,64 @@
+.message {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+    padding: 4px 16px;
+
+  &.mention {
+    background-color: var(--mention-message);
+    border-left: 2px solid var(--mention-detail);
+    padding-left: 14px;
+  }
+
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    &.bot {
+      background-color: var(--mention-detail);
+      border: solid 2px #004599;
+      box-sizing: content-box;
+    }
+  }
+
+  &__content {
+    min-height: 40px;
+    margin-left: 17px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+
+    &--header {
+      display: flex;
+      align-items: center;
+      > strong {
+        color: var(--white);
+      }
+
+      > span {
+        margin-left: 6px;
+        background-color: var(--discord);
+        color: var(--white);
+        border-radius: 4px;
+        padding: 4px 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 11px;
+      }
+
+      > time {
+        color: var(--gray);
+        margin-left: 6px;
+        font-size: 13px;
+      }
+    }
+
+    &--text-message {
+      text-align: left;
+      font-size: 16px;
+      color: var(--white);
+    }
+  }
+}

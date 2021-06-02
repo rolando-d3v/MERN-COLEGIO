@@ -9,11 +9,29 @@ const ChannelData: React.FC = () => {
   return (
     <section className="container-data">
       <article className="container-data__messages">
+        {Array.from(Array(15).keys()).map((n) => (
+          <ChannelMessage
+            key={n}
+            author="Guilherme Rodz"
+            date="21/06/2020"
+            content="Hoje é o meu aniversário!"
+            // isBot
+            // hasMention
+          />
+        ))}
+
         <ChannelMessage
-        author="Guilherme Rodz"
-        date="21/06/2020"
+          author="Guilherme Rodz"
+          date="21/06/2020"
+          content={
+            <>
+              <span>@Guilherme Rodz</span>, me carrega no LoL e CS de novo por
+              favor?
+            </>
+          }
+          hasMention
+          isBot
         />
-       
       </article>
 
       <article className="container-data__content">
