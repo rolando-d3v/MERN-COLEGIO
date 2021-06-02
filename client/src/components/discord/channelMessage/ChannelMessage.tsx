@@ -17,8 +17,9 @@ const ChannelMessage: React.FC<Props> = ({
   hasMention,
   isBot,
 }) => {
+    
   return (
-    <div className={`message ${hasMention ? 'mention' : ''} `} >
+    <div className={`message ${hasMention ? "mention" : ""} `}>
       <img
         className={`message__avatar ${isBot ? "bot" : ""} `}
         src="assets/avatar.jpg"
@@ -27,10 +28,10 @@ const ChannelMessage: React.FC<Props> = ({
       <div className="message__content">
         <div className="message__content--header">
           <strong> {author} </strong>
-          {isBot ? <span>Bot</span> : ""}
+          {isBot && <span>Bot</span> }
           <time>{date} </time>
         </div>
-        <p className="message__content--text-message">{content} </p>
+        <div className="message__content--text-message">{content} </div>
       </div>
     </div>
   );

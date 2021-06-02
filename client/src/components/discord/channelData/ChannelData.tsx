@@ -25,7 +25,7 @@ const ChannelData: React.FC = () => {
           date="21/06/2020"
           content={
             <>
-              <span>@Guilherme Rodz</span>, me carrega no LoL e CS de novo por
+              <span className='mention-name'  >@Guilherme Rodz</span>, me carrega no LoL e CS de novo por
               favor?
             </>
           }
