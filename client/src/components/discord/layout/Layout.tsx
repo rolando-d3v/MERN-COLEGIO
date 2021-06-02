@@ -1,4 +1,5 @@
 import React from "react";
+import ChannelData from "../channelData/ChannelData";
 import ChannelInfo from "../channelInfo/ChannelInfo";
 import ChannelList from "../channelList/ChannelList";
 import ServerList from "../serverList/ServerList";
@@ -16,6 +17,7 @@ const Layout: React.FC = () => {
       <ChannelList/>
       <UserInfo/>
       <UserList/>
+      <ChannelData/>
     </div>
   );
 };
