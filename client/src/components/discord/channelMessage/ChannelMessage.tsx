@@ -17,7 +17,7 @@ const ChannelMessage: React.FC<Props> = ({
   hasMention,
   isBot,
 }) => {
-    
+
   return (
     <div className={`message ${hasMention ? "mention" : ""} `}>
       <img

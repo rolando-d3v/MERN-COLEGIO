@@ -1,14 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as HiIcons from "react-icons/hi";
 import ChannelMessage from "../channelMessage/ChannelMessage";
 import "./channelData.scss";
 
 const ChannelData: React.FC = () => {
-  useEffect(() => {}, []);
+
+
+  //se usa useRef para hacer refernecia a DIV para
+  // cuando cargue la pagina el scroll se vea el ultimo message escrito
+  const messagesRef =  useRef() as React.MutableRefObject<HTMLDivElement>
+
+  useEffect(() => {
+    const div = messagesRef.current
+    if (div) {
+      div.scrollTop = div.scrollHeight
+    }
+  }, []);
 
   return (
     <section className="container-data">
-      <article className="container-data__messages">
+      <article className="container-data__messages" ref={messagesRef} >
         {Array.from(Array(15).keys()).map((n) => (
           <ChannelMessage
             key={n}
