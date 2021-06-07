@@ -2,20 +2,18 @@
 
 // SL - server list
 // SN - server name
-// CI - chanel info
-// CI - chanel info
+// CI - channel info
+// CI - channel info
 
 // SL - server list
-// CL - Channel List
+// CL - Channel List => lista de canales
 // CD - Channel Data
 // UL - User list
 
-// SL - server list
+// SL - server list => lista de servidores
 // UI - User Info
 // CD - Channel Data
-// UL - User list
-
-
+// UL - User list  => lista de usuario
 
 .layout-discord {
   display: grid;
@@ -25,5 +23,40 @@
     "SL SN CI CI"
     "SL CL CD UL"
     "SL UI CD UL";
+  height: 100vh;
+}
+
+//RESPONSIVE
+@media screen and (max-width: 1000px) {
+  .layout-discord {
+    display: grid;
+    grid-template-columns: 71px 240px auto;
+    grid-template-rows: 46px auto 52px;
+    grid-template-areas:
+    "SL SN CI CI"
+    "SL CL CD CD"
+    "SL UI CD CD";
     height: 100vh;
+  }
+  .user-list {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .layout-discord {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 46px auto 52px;
+    grid-template-areas:
+    " CI CI"
+    " CD CD"
+    " CD CD";
+    height: 100vh;
+  }
+
+  .server-list, .content-name, .user-info, .channel-list {
+    display: none;
+  }
 }

@@ -7,11 +7,10 @@
   overflow-y: auto;
   max-height: calc(100vh - 46px);
 
-//   borra el scroll en y
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-
+  //   borra el scroll en y
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -49,8 +48,6 @@
     background: rgba(255, 255, 255, 0.1);
   }
 
-
-
   > img {
     width: 32px;
     border-radius: 50%;
@@ -66,7 +63,7 @@
     overflow: hidden;
   }
 
-  >span {
+  > span {
     margin-left: 9px;
     background-color: var(--discord);
     color: var(--white);
