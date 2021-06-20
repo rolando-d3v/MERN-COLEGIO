@@ -35,6 +35,7 @@ export default function Video({ video }: Props) {
             url={video.url}
             className="react-player"
             width="100%"
+            controls
           />
         </div>
       </div>

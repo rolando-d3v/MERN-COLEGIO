@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="">
       <BrowserRouter>
-      {/* <Navbar/> */}
+      <Navbar/>
         <Switch>
           <Route exact path="/discord" component={Discord} />
           <Route exact path="/" component={Video} />
